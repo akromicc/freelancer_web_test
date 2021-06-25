@@ -1,0 +1,104 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #252525;
+    --primario: #ff9900;
+    --segundario: #00a2ff;
+    --gris: #757575;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box; /* ayuda a que la caja ocupe espacio hacia adentro para que no mida mas de lo deseado */
+}
+
+*, *:before, *:after { /* ayuda a que la caja no ocupe mas espacio */
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px; /*  1 rem = 10px */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+.titulo span {
+    font-size: 2.8rem;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg {
+    background-color: var(--segundario);
+}
+
+/*  
+    flex desbloquea propiedades
+    para centrar horizontal es decir row jusitify-content
+    para centrar vertical es decir colum aling-items
+*/
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a:hover { 
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    padding: 2rem;
+    position: relative; /* para agregar position absolute al hijo el padre debe tener position relative si no tomara como padre el documento */
+}
+
+.contenido-hero {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* 
+    ejemplo
+    @media (min-width: 480px) { >= 480px
+        
+    }
+
+    media querys estandar
+
+    480px phone
+    768px tablet
+    1140px laptop
+    1400px o 1440px
+*/
